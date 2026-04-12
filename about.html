@@ -7,7 +7,8 @@
     <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/font-awesome.css">
     <link rel="stylesheet" href="css/redesign.css">
@@ -24,7 +25,7 @@
                             <span>Senior Advocate &amp; Consultant</span>
                         </span>
                     </a>
-                    <img src="images/advocate-badge.png" alt="Advocate Badge" class="header-badge">
+                    <img loading="lazy" src="images/advocate-badge.png" alt="Advocate Badge" class="header-badge">
                 </div>
             </div>
             <div class="header-bottom">
@@ -58,7 +59,7 @@
                     <div class="grid-2-col align-center">
                         <div class="about__media reveal-item">
                             <div class="image-stack">
-                                <img src="images/other1.webp" alt="Portrait of Advocate Santoshmurthy standing" class="img-main" style="object-position: top;">
+                                <img loading="lazy" src="images/other1.webp" alt="Portrait of Advocate Santoshmurthy standing" class="img-main" style="object-position: top;">
                                 <div class="stat-overlay" style="min-width:280px;">
                                     <strong>Comprehensive Liaisoning</strong>
                                     <span>Pan India Advocates, Court officials, Statutory & Regulatory Authorities.</span>
@@ -156,6 +157,6 @@
             document.querySelector('[data-nav-toggle]').addEventListener('click', () => document.body.classList.toggle('nav-open'));
         });
     </script>
-<script src="js/shared.js"></script>
+<script src="js/shared.js" defer></script>
 </body>
 </html>
