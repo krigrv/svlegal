@@ -6,7 +6,7 @@
     <meta content="Strategic legal counsel for litigation, advisory, liaisoning, and regulatory matters." name="description">
     <meta content="Santoshmurthy R. Vashista | Senior Advocate &amp; Consultant" name="author">
     <title>Santoshmurthy R. Vashista | Senior Advocate &amp; Consultant</title>
-    <link rel="icon" href="images/icon.png" type="image/gif" sizes="16x16">
+    <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -16,27 +16,34 @@
 </head>
 <body class="traditional-theme">
     <div class="site-shell">
-        <header class="site-header reveal-item align-items-center">
-            <div class="container d-flex justify-content-between align-items-center">
-                <a class="brand" href="index.html" aria-label="Go to home">
-                    <span class="brand__mark" aria-hidden="true">SV</span>
-                    <span class="brand__text">
-                        <strong>Santoshmurthy R. Vashista</strong>
-                        <span>Senior Advocate &amp; Consultant</span>
-                    </span>
-                </a>
-                <button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false" data-nav-toggle>
-                    <span></span><span></span><span></span>
-                </button>
-                <nav class="site-nav" data-nav>
-                    <a href="index.html" class="active">Home</a>
+        <header class="site-header reveal-item">
+            <div class="header-top">
+                <div class="container" style="display:flex; justify-content:center; align-items:center;">
+                    <a class="brand" href="index.html" aria-label="Go to home">
+                        <span class="brand__mark" aria-hidden="true">SV</span>
+                        <span class="brand__text">
+                            <strong>Santoshmurthy R. Vashista</strong>
+                            <span>Senior Advocate &amp; Consultant</span>
+                        </span>
+                    </a>
+                    <img src="images/advocate-badge.png" alt="Advocate Badge" class="header-badge">
+                </div>
+            </div>
+            <div class="header-bottom">
+                <div class="container" style="display:flex; justify-content:center; align-items:center;">
+                    <button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false" data-nav-toggle>
+                        <span></span><span></span><span></span>
+                    </button>
+                    <nav class="site-nav" data-nav>
+                        <a href="index.html" class="active">Home</a>
                     <a href="about.html">About</a>
                     <a href="practice.html">Practice Areas</a>
                     <a href="services.html">Services</a>
                     <a href="training.html">Training</a>
                     <a href="testimonials.html">Testimonials</a>
                     <a href="contact.html">Contact</a>
-                </nav>
+                    </nav>
+                </div>
             </div>
         </header>
 
@@ -45,23 +52,25 @@
                 <div class="hero__bg-pattern"></div>
                 <div class="hero__glow"></div>
                 <div class="container">
+                    <div class="hero__eyebrow-wrap">
+                        <span class="hero__rule"></span>
+                        <span class="eyebrow">Senior Advocate &amp; Consultant | High Court of Karnataka</span>
+                        <span class="hero__rule"></span>
+                    </div>
                     <div class="hero__wrapper">
                         <div class="hero__text-content reveal-item">
-                            <div class="hero__eyebrow-wrap">
-                                <span class="hero__rule"></span>
-                                <span class="eyebrow">Senior Advocate &amp; Consultant | High Court of Karnataka</span>
-                            </div>
                             <h1 class="hero__title">
                                 <span class="hero__title-line">Measured advocacy.</span>
                                 <span class="hero__title-line hero__title-line--accent">Clear strategy.</span>
                                 <span class="hero__title-line">Trusted counsel.</span>
                             </h1>
+                            <hr class="hero__gold-rule">
                             <p class="hero__lede">
                                 SV Advocate and Consultant delivers practical, disciplined legal support across judicial courts, tribunals, regulatory forums, advisory work, and liaisoning.
                             </p>
                             <div class="hero__button-group mt-4">
                                 <a class="btn btn--primary" href="practice.html">View Practice Areas</a>
-                                <a class="btn btn--outline" href="contact.html">Contact Chambers</a>
+                                <a class="btn btn--outline" style="border-color: var(--accent-gold); color: var(--accent-gold);" href="SV_Legal_Profile.pdf" download><i class="fa fa-download" style="margin-right: 8px;"></i>Firm Profile</a>
                             </div>
                             <div class="hero__badges">
                                 <div class="badge-item"><i class="fa fa-university"></i><span>Judicial Court at all levels</span></div>
@@ -73,13 +82,34 @@
                             <div class="hero-image-card">
                                 <div class="hero-image-card__corner hero-image-card__corner--tl"></div>
                                 <div class="hero-image-card__corner hero-image-card__corner--br"></div>
-                                <img src="images/profilepic.png" alt="Portrait of Santoshmurthy R. Vashista">
+                                <img src="images/profilepic-opt.png" alt="Portrait of Santoshmurthy R. Vashista" fetchpriority="high">
                                 <div class="hero-image-border"></div>
                             </div>
                             <div class="hero__stat">
                                 <strong>22+</strong>
                                 <span>Years of Legal Practice</span>
                             </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- STATS STRIP -->
+            <section class="stat-strip">
+                <div class="container">
+                    <div class="stat-container reveal-item">
+                        <div class="stat-box">
+                            <span class="stat-num" data-target="22" data-suffix="+">0+</span>
+                            <span class="stat-label">Years Experience</span>
+                        </div>
+                        <div class="stat-box">
+                            <span class="stat-num" data-target="6" data-suffix="">0</span>
+                            <span class="stat-label">Core Practice Areas</span>
+                        </div>
+                        <div class="stat-box">
+                            <!-- Non-number factual stat -->
+                            <span class="stat-num" style="font-size: 1.8rem;">Pan India</span>
+                            <span class="stat-label">Coverage & Liaising</span>
                         </div>
                     </div>
                 </div>
@@ -121,14 +151,34 @@
             </section>
         </main>
 
-        <footer class="site-footer text-center">
+                <footer class="site-footer">
             <div class="container">
-                <h3 style="font-family: var(--font-serif); color: var(--accent-gold); margin-bottom: 0.5rem;">Santoshmurthy R. Vashista</h3>
-                <p style="color: #bbb; font-size: 0.9rem; margin-bottom: 1.5rem;">Senior Advocate &amp; Consultant | High Court of Karnataka</p>
-                <div class="footer-links">
-                    <a href="about.html">About</a> | <a href="practice.html">Practice</a> | <a href="services.html">Services</a> | <a href="contact.html">Contact</a>
+                <div class="footer-grid">
+                    <div class="footer-col">
+                        <div class="disclaimer__wordmark" style="color:var(--accent-gold); font-size:1.5rem; margin-bottom:1rem;"><strong>SV</strong><span style="color:#fff;">Legal Consultant</span></div>
+                        <p style="color: #bbb; font-size: 0.9rem; margin-bottom: 1.5rem;">Senior Advocate &amp; Consultant<br>High Court of Karnataka</p>
+                    </div>
+                    <div class="footer-col">
+                        <h4 style="color:#fff; margin-bottom:1rem; font-family:var(--font-serif);">Quick Links</h4>
+                        <div class="footer-links-grid">
+                            <a href="about.html">About</a>
+                            <a href="practice.html">Practice Areas</a>
+                            <a href="services.html">Services</a>
+                            <a href="training.html">Training</a>
+                            <a href="testimonials.html">Testimonials</a>
+                            <a href="contact.html">Contact</a>
+                        </div>
+                    </div>
+                    <div class="footer-col">
+                        <h4 style="color:#fff; margin-bottom:1rem; font-family:var(--font-serif);">Contact Details</h4>
+                        <ul class="footer-contact-list">
+                            <li><i class="fa fa-map-marker" style="margin-top: 5px;"></i> <span># 570, 6th Main Rd, 4th Stage,<br>Rarajeshwari Nagar,<br>Bengaluru 560098</span></li>
+                            <li><i class="fa fa-phone" style="margin-top: 5px;"></i> <span>+91 96113 44455</span></li>
+                            <li><i class="fa fa-envelope" style="margin-top: 5px;"></i> <span>svlegalconsultant@outlook.com</span></li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="footer-bottom mt-4" style="border-top:1px solid rgba(255,255,255,0.1); padding-top:1rem; color:#888; font-size:0.75rem;">
+                <div class="footer-bottom mt-4" style="border-top:1px solid rgba(255,255,255,0.1); padding-top:1rem; color:#888; font-size:0.75rem; text-align:center;">
                     &copy; 2026 SV Legal Consultant. All rights reserved. <br>
                     Information on this site is not intended to solicit clients, but strictly meant for information per Bar Council of India Rules.
                 </div>
@@ -179,5 +229,6 @@
             });
         });
     </script>
+<script src="js/shared.js"></script>
 </body>
 </html>
