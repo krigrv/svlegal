@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <title>Practice Areas | SV Legal Consultant</title>
+    <link rel="icon" href="images/icon.png" type="image/gif" sizes="16x16">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font-awesome.css">
+    <link rel="stylesheet" href="css/redesign.css">
+</head>
+<body class="traditional-theme">
+    <div class="site-shell">
+        <header class="site-header reveal-item align-items-center">
+            <div class="container d-flex justify-content-between align-items-center">
+                <a class="brand" href="index.html">
+                    <span class="brand__mark" aria-hidden="true">SV</span>
+                    <span class="brand__text"><strong>Santoshmurthy R. Vashista</strong><span>Advocate & Consultant</span></span>
+                </a>
+                <button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false" data-nav-toggle>
+                    <span></span><span></span><span></span>
+                </button>
+                <nav class="site-nav" data-nav>
+                    <a href="index.html">Home</a><a href="about.html">About</a><a href="practice.html" class="active">Practice Areas</a><a href="services.html">Services</a><a href="training.html">Training</a><a href="resources.html">Resources</a><a href="contact.html">Contact</a>
+                </nav>
+            </div>
+        </header>
+
+        <main>
+            <div class="page-header">
+                <div class="container">
+                    <h1 class="section-title">Practice Areas</h1>
+                    <p class="section-desc">Extensive legal expertise supporting individuals and organizations.</p>
+                </div>
+            </div>
+
+            <section class="practice section-bg-light">
+                <div class="container">
+                    <div class="grid-3-col">
+                        <!-- Criminal -->
+                        <div class="classic-card reveal-item" style="height:100%;">
+                            <div class="card-icon"><i class="fa fa-gavel"></i></div>
+                            <h3>Criminal Law</h3>
+                            <p>Focuses on conduct offensive to the public or society. Deals with offences perpetrated against society at large. Handling robust defence, strategic trial management, and comprehensive appeals.</p>
+                        </div>
+                        <!-- Family -->
+                        <div class="classic-card reveal-item" style="height:100%;">
+                            <div class="card-icon"><i class="fa fa-users"></i></div>
+                            <h3>Family & Marriage</h3>
+                            <p>Covers different marriage laws for different religions in India (five total acts). Includes regulations for marriage processes, special marriage acts, alimony, and custody hearings.</p>
+                        </div>
+                        <!-- Corporate -->
+                        <div class="classic-card reveal-item" style="height:100%;">
+                            <div class="card-icon"><i class="fa fa-building-o"></i></div>
+                            <h3>Corporate Law</h3>
+                            <p>Governing the rights, relations, and conduct of businesses and organizations. Includes litigation, compliance, mergers, acquisitions, and comprehensive contract matters.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelector('[data-nav-toggle]').addEventListener('click', () => document.body.classList.toggle('nav-open'));
+        });
+    </script>
+</body>
+</html>

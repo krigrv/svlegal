@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <title>Services | SV Legal Consultant</title>
+    <link rel="icon" href="images/icon.png" type="image/gif" sizes="16x16">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font-awesome.css">
+    <link rel="stylesheet" href="css/redesign.css">
+</head>
+<body class="traditional-theme">
+    <div class="site-shell">
+        <header class="site-header reveal-item align-items-center">
+            <div class="container d-flex justify-content-between align-items-center">
+                <a class="brand" href="index.html">
+                    <span class="brand__mark" aria-hidden="true">SV</span>
+                    <span class="brand__text"><strong>Santoshmurthy R. Vashista</strong><span>Advocate & Consultant</span></span>
+                </a>
+                <button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false" data-nav-toggle>
+                    <span></span><span></span><span></span>
+                </button>
+                <nav class="site-nav" data-nav>
+                    <a href="index.html">Home</a><a href="about.html">About</a><a href="practice.html">Practice Areas</a><a href="services.html" class="active">Services</a><a href="training.html">Training</a><a href="resources.html">Resources</a><a href="contact.html">Contact</a>
+                </nav>
+            </div>
+        </header>
+
+        <main>
+            <div class="page-header">
+                <div class="container">
+                    <h1 class="section-title">Corporate Legal Services</h1>
+                    <p class="section-desc">Specialized Corporate Solutions focusing on HR Compliance and robust Contract Management.</p>
+                </div>
+            </div>
+
+            <section class="services section-bg-light">
+                <div class="container">
+                    <div class="grid-2-col">
+                        <!-- HR & Talent -->
+                        <div class="classic-card reveal-item" style="border-top:4px solid var(--accent-gold);">
+                            <div class="card-icon" style="color:var(--accent-gold);"><i class="fa fa-id-card-o"></i></div>
+                            <h3 style="font-size:1.8rem; margin-bottom:1.5rem;">Human Resource / Talent</h3>
+                            <ul class="check-list">
+                                <li style="margin-bottom:1.5rem"><strong>Employment Letters:</strong> Letter of Intent, Appointment Letter, Medical Certificate, Address Proof, Markscards, Form No 11, Experience Letter, Relieving Letter.</li>
+                                <li style="margin-bottom:1.5rem"><strong>Sanction Letters:</strong> Extension, Warning, Show Cause, Suspension, Asset/Laptop Recovery, Notice of Termination Simplicitor.</li>
+                                <li style="margin-bottom:1.5rem"><strong>Policy/Process:</strong> Manual/Handbook, ID Card, Laptop, Skills, Dress Code, POSH.</li>
+                                <li style="margin-bottom:1.5rem"><strong>Procedural Aspect:</strong> Vendor Payments, Empanelment, Maintenance, Ethics Hotline, Internal Investigation.</li>
+                            </ul>
+                        </div>
+                        
+                        <!-- Contracts -->
+                        <div class="classic-card reveal-item" style="border-top:4px solid var(--accent-gold);">
+                            <div class="card-icon" style="color:var(--accent-gold);"><i class="fa fa-file-text-o"></i></div>
+                            <h3 style="font-size:1.8rem; margin-bottom:1.5rem;">Contract Management</h3>
+                            <ul class="check-list">
+                                <li style="margin-bottom:1.5rem"><strong>Essentials:</strong> Offer, acceptance, mutual consent, consideration, capacity, legality.</li>
+                                <li style="margin-bottom:0.5rem"><strong>Agreement Types:</strong></li>
+                                <li><strong>SLA:</strong> Service level expected from a vendor with remedies/penalties.</li>
+                                <li><strong>MSA:</strong> Terms governing future transactions.</li>
+                                <li><strong>Outsourcing:</strong> Hiring third-party for tasks/services.</li>
+                                <li><strong>MoU:</strong> Nonbinding agreement of intentions.</li>
+                                <li><strong>NDA:</strong> Protection of ideas/information.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelector('[data-nav-toggle]').addEventListener('click', () => document.body.classList.toggle('nav-open'));
+        });
+    </script>
+</body>
+</html>
