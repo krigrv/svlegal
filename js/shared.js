@@ -8,6 +8,28 @@ document.addEventListener('DOMContentLoaded', () => {
         }, { passive: true });
     }
 
+    // ── 1b. Mobile nav toggle ────────────────────────────────────────────────
+    const navToggle = document.querySelector('[data-nav-toggle]');
+    const siteNav = document.querySelector('[data-nav]');
+    if (navToggle && siteNav) {
+        navToggle.addEventListener('click', () => {
+            const isOpen = document.body.classList.toggle('nav-open');
+            navToggle.setAttribute('aria-expanded', isOpen);
+            // Position nav right below the header
+            if (isOpen && header) {
+                siteNav.style.top = header.offsetHeight + 'px';
+            }
+        });
+
+        // Close nav when a link is clicked
+        siteNav.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.body.classList.remove('nav-open');
+                navToggle.setAttribute('aria-expanded', 'false');
+            });
+        });
+    }
+
     // ── 2. Floating WhatsApp button ─────────────────────────────────────────
     const wa = document.createElement('a');
     wa.href = 'https://wa.me/919611344455';
