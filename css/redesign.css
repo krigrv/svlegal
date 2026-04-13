@@ -227,6 +227,10 @@ h1, h2, h3, h4 {
     font-weight: bold;
 }
 
+.brand__text {
+    text-align: center;
+}
+
 .brand__text strong {
     display: block;
     font-size: 1.35rem;
