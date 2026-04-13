@@ -8,24 +8,22 @@ document.addEventListener('DOMContentLoaded', () => {
         }, { passive: true });
     }
 
-    // ── 1b. Mobile nav toggle ────────────────────────────────────────────────
-    const navToggle = document.querySelector('[data-nav-toggle]');
+    // ── 1b. Mobile nav positioning & auto-close ─────────────────────────────
     const siteNav = document.querySelector('[data-nav]');
-    if (navToggle && siteNav) {
-        navToggle.addEventListener('click', () => {
-            const isOpen = document.body.classList.toggle('nav-open');
-            navToggle.setAttribute('aria-expanded', isOpen);
-            // Position nav right below the header
-            if (isOpen && header) {
+    if (header && siteNav) {
+        // Position nav below header whenever it opens
+        const positionNav = () => {
+            if (document.body.classList.contains('nav-open')) {
                 siteNav.style.top = header.offsetHeight + 'px';
             }
-        });
+        };
+        const observer = new MutationObserver(positionNav);
+        observer.observe(document.body, { attributes: true, attributeFilter: ['class'] });
 
         // Close nav when a link is clicked
         siteNav.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', () => {
                 document.body.classList.remove('nav-open');
-                navToggle.setAttribute('aria-expanded', 'false');
             });
         });
     }
