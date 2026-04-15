@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <title>Legal AI Lab | SV Legal Consultant</title>
+    <meta name="description" content="Use the Ambuj Indian legal GGUF model locally with a dedicated starter project and Gradio chat UI.">
+    <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font-awesome.css">
+    <link rel="stylesheet" href="css/redesign.css">
+</head>
+<body class="traditional-theme">
+    <div class="site-shell">
+        <header class="site-header reveal-item">
+            <div class="header-top">
+                <div class="container" style="display:flex; justify-content:center; align-items:center;">
+                    <a class="brand" href="index.html" aria-label="Go to home">
+                        <span class="brand__mark" aria-hidden="true">SV</span>
+                        <span class="brand__text">
+                            <strong>Santoshmurthy R. Vashista</strong>
+                            <span>Senior Advocate &amp; Consultant</span>
+                        </span>
+                    </a>
+                    <img loading="lazy" src="images/advocate-badge.png" alt="Advocate Badge" class="header-badge">
+                </div>
+            </div>
+            <div class="header-bottom">
+                <div class="container" style="display:flex; justify-content:center; align-items:center;">
+                    <button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false" data-nav-toggle>
+                        <span></span><span></span><span></span>
+                    </button>
+                    <nav class="site-nav" data-nav>
+                        <a href="index.html">Home</a>
+                        <a href="about.html">About</a>
+                        <a href="practice.html">Practice Areas</a>
+                        <a href="services.html">Services</a>
+                        <a href="training.html">Training</a>
+                        <a href="legal-ai.html" class="active">Legal AI</a>
+                        <a href="testimonials.html">Testimonials</a>
+                        <a href="contact.html">Contact</a>
+                    </nav>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <section class="page-header legal-ai-header">
+                <div class="container">
+                    <span class="eyebrow">Hugging Face GGUF model</span>
+                    <h1 class="section-title">SV Legal AI</h1>
+                    <p class="section-desc">Draft notices, review clauses, prepare case briefs, summarize documents, and shape client-ready legal work products.</p>
+                </div>
+            </section>
+
+            <section class="legal-ai-workspace">
+                <div class="container">
+                    <div class="legal-ai-shell">
+                        <aside class="legal-ai-sidebar">
+                            <div class="legal-ai-status" data-ai-status>
+                                <span class="legal-ai-status__dot"></span>
+                                <span>Checking model backend</span>
+                            </div>
+                            <div class="legal-ai-control">
+                                <label for="workflow">Work product</label>
+                                <select id="workflow">
+                                    <option value="general">General analysis</option>
+                                    <option value="legal_notice">Legal notice</option>
+                                    <option value="case_brief">Case brief</option>
+                                    <option value="clause_review">Clause review</option>
+                                    <option value="research_memo">Research memo</option>
+                                    <option value="client_email">Client email</option>
+                                    <option value="compliance_checklist">Compliance checklist</option>
+                                    <option value="document_summary">Document summary</option>
+                                </select>
+                            </div>
+                            <div class="legal-ai-control">
+                                <label for="temperature">Temperature</label>
+                                <input id="temperature" type="range" min="0" max="1" step="0.05" value="0.35">
+                            </div>
+                            <div class="legal-ai-control">
+                                <label for="maxTokens">Max tokens</label>
+                                <input id="maxTokens" type="number" min="64" max="1600" step="32" value="768">
+                            </div>
+                            <div class="legal-ai-prompts">
+                                <button type="button" data-workflow="legal_notice" data-prompt="Draft a legal notice for recovery of unpaid invoices. Facts: [client name], [opposite party], invoice dates, amount due, reminders sent, and demanded payment timeline.">Payment notice</button>
+                                <button type="button" data-workflow="case_brief" data-prompt="Prepare a case brief for a civil dispute. Facts: [client position], [opposite party claim], [documents available], [forum], [next hearing date].">Case brief</button>
+                                <button type="button" data-workflow="clause_review" data-prompt="Review this contract clause for risk and suggest a safer revision: [paste clause here].">Clause review</button>
+                                <button type="button" data-workflow="research_memo" data-prompt="Prepare a research memo on this Indian law question: [question]. Include issues, legal position to verify, risks, and practical recommendation.">Research memo</button>
+                                <button type="button" data-workflow="client_email" data-prompt="Draft a client email explaining the next steps in this matter: [facts], [current status], [documents needed], [deadline].">Client email</button>
+                                <button type="button" data-workflow="document_summary" data-prompt="Summarize this document/fact note for a lawyer: [paste text]. Identify key points, risks, missing information, and questions for client.">Document summary</button>
+                            </div>
+                            <p class="legal-ai-note">Educational use only. Verify citations, sections, and strategy with competent counsel.</p>
+                        </aside>
+
+                        <div class="legal-ai-chat" aria-live="polite">
+                            <div class="legal-ai-messages" data-ai-messages>
+                                <div class="legal-ai-message legal-ai-message--assistant">
+                                    <strong>SV Legal AI</strong>
+                                    <p>Select a work product and enter matter facts. I can draft notices, briefs, checklists, client emails, and clause-review notes for lawyer verification.</p>
+                                </div>
+                            </div>
+                            <form class="legal-ai-form" data-ai-form>
+                                <textarea name="message" rows="4" placeholder="Type your legal question..." required></textarea>
+                                <button class="btn btn--primary" type="submit">
+                                    <i class="fa fa-paper-plane"></i>
+                                    Ask AI
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section-bg-dark legal-ai-setup">
+                <div class="container">
+                    <div class="grid-3-col">
+                        <div class="classic-card reveal-item">
+                            <div class="card-icon"><i class="fa fa-server"></i></div>
+                            <h3>Vercel route</h3>
+                            <p><code>/api/legal-ai</code> forwards chat requests to the hosted model backend.</p>
+                        </div>
+                        <div class="classic-card reveal-item">
+                            <div class="card-icon"><i class="fa fa-globe"></i></div>
+                            <h3>Backend URL</h3>
+                            <p>Set <code>LEGAL_AI_BACKEND_URL</code> in Vercel after deploying the Python backend.</p>
+                        </div>
+                        <div class="classic-card reveal-item">
+                            <div class="card-icon"><i class="fa fa-lock"></i></div>
+                            <h3>Protected model</h3>
+                            <p>The browser never exposes Hugging Face tokens or loads the GGUF file directly.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="site-footer">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-col">
+                        <div class="disclaimer__wordmark" style="color:var(--accent-gold); font-size:1.5rem; margin-bottom:1rem;"><strong>SV</strong><span style="color:#fff;">Legal Consultant</span></div>
+                        <p style="color: #bbb; font-size: 0.9rem; margin-bottom: 1.5rem;">Senior Advocate &amp; Consultant<br>High Court of Karnataka</p>
+                    </div>
+                    <div class="footer-col">
+                        <h4 style="color:#fff; margin-bottom:1rem; font-family:var(--font-serif);">Quick Links</h4>
+                        <div class="footer-links-grid">
+                            <a href="about.html">About</a>
+                            <a href="practice.html">Practice Areas</a>
+                            <a href="services.html">Services</a>
+                            <a href="training.html">Training</a>
+                            <a href="legal-ai.html">Legal AI</a>
+                            <a href="contact.html">Contact</a>
+                        </div>
+                    </div>
+                    <div class="footer-col">
+                        <h4 style="color:#fff; margin-bottom:1rem; font-family:var(--font-serif);">Model Note</h4>
+                        <p style="color:#bbb; font-size:0.9rem; line-height:1.8;">This page is for local access to the Hugging Face GGUF project and the starter app only. It does not provide legal advice.</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const toggle = document.querySelector('[data-nav-toggle]');
+            if (toggle) {
+                toggle.addEventListener('click', () => document.body.classList.toggle('nav-open'));
+            }
+
+            const isLocalSite = ['127.0.0.1', 'localhost'].includes(window.location.hostname);
+            const defaultApiBase = isLocalSite ? 'http://127.0.0.1:7861' : '';
+            const apiBase = window.SV_LEGAL_AI_API || localStorage.getItem('svlegal_ai_api') || defaultApiBase;
+            const form = document.querySelector('[data-ai-form]');
+            const messages = document.querySelector('[data-ai-messages]');
+            const status = document.querySelector('[data-ai-status]');
+            const workflow = document.getElementById('workflow');
+            const temperature = document.getElementById('temperature');
+            const maxTokens = document.getElementById('maxTokens');
+            const history = [];
+
+            const setStatus = (label, state) => {
+                status.dataset.state = state;
+                status.querySelector('span:last-child').textContent = label;
+            };
+
+            const addMessage = (role, content) => {
+                const item = document.createElement('div');
+                item.className = `legal-ai-message legal-ai-message--${role}`;
+                item.innerHTML = `<strong>${role === 'user' ? 'You' : 'SV Legal AI'}</strong><p></p>`;
+                item.querySelector('p').textContent = content;
+                messages.appendChild(item);
+                messages.scrollTop = messages.scrollHeight;
+            };
+
+            const checkBackend = async () => {
+                try {
+                    const response = await fetch(`${apiBase}/api/health`);
+                    if (!response.ok) throw new Error('Backend unavailable');
+                    setStatus('Model backend ready', 'ready');
+                } catch {
+                    setStatus('Start run-api.sh first', 'offline');
+                }
+            };
+
+            document.querySelectorAll('[data-prompt]').forEach(button => {
+                button.addEventListener('click', () => {
+                    if (button.dataset.workflow) workflow.value = button.dataset.workflow;
+                    form.message.value = button.dataset.prompt;
+                    form.message.focus();
+                });
+            });
+
+            form.addEventListener('submit', async event => {
+                event.preventDefault();
+                const message = form.message.value.trim();
+                if (!message) return;
+
+                addMessage('user', message);
+                form.message.value = '';
+                form.querySelector('button').disabled = true;
+                setStatus('Thinking', 'loading');
+
+                try {
+                    const response = await fetch(`${apiBase}/api/legal-ai`, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                            message,
+                            history,
+                            workflow: workflow.value,
+                            temperature: Number(temperature.value),
+                            max_tokens: Number(maxTokens.value),
+                        }),
+                    });
+
+                    const data = await response.json();
+                    if (!response.ok) throw new Error(data.detail || 'Model request failed');
+
+                    addMessage('assistant', data.answer);
+                    history.push({ role: 'user', content: message });
+                    history.push({ role: 'assistant', content: data.answer });
+                    while (history.length > 20) history.shift();
+                    setStatus('Model backend ready', 'ready');
+                } catch (error) {
+                    addMessage('assistant', `I could not reach the model backend. ${error.message}`);
+                    setStatus('Backend unavailable', 'offline');
+                } finally {
+                    form.querySelector('button').disabled = false;
+                    form.message.focus();
+                }
+            });
+
+            checkBackend();
+        });
+    </script>
+</body>
+</html>
